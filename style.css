@@ -1,0 +1,449 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat" ,sans-serif;
+}
+html{
+    font-size: 62.5%;
+    /*  1rem = 10px */
+}
+body{
+
+}
+
+/*  for variable creating use root  */
+/* tints and color generator in online by tints and shades */
+:root{
+    --primary-color:#000839;
+    --primary-shades:#00020b;
+    --para-color:#80849c;
+    --helper-color:#1264fa;
+    --white:#fff;
+    --bg-color:#e6e6eb;
+}
+a{
+    text-decoration: none;
+    display: inline-block;
+}
+img{
+    display: inline-block;
+    width: 100%;
+}
+li{
+    list-style: none;
+}
+h1,
+h2,
+h3,
+h4{
+    color: var(--primary-color);
+}
+
+.para{
+    font-size: 1.6rem;
+    line-height: 1.7;
+    font-weight: 400;
+    color: --var(--para-color);
+}
+
+/*-----------------------
+ header and navbar style start 
+ ----------------------------- */
+
+ .header{
+    height: 9.6rem;
+    display: flex;
+    justify-content: space-between; /* means all set in left  middle right*/
+    align-items: center;
+    padding: 0 5.4rem; /* padding left side  and right side */
+ }
+
+ .logo{
+    font-size: 2rem;
+    font-weight: bold;
+ }
+
+ /* make sure that all nav bar icon in one line */
+
+ .navbar{
+    display: flex;
+    align-items: center;
+ }
+
+.navbar-list{  /* this is property to show in horizontal means one lines and gap property to give gap between fist and last content */  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    font-size: 1.5rem;
+}
+
+.navbar-list .navbar-btn{
+    padding: 12px 24px;
+    background-color: var(--white);
+    border: 1px solid var(--helper-color);
+    color: var(--helper-color);
+    border-radius: 25px;  /* border radius property work on same width and same height
+     if no height and no width then always go with grater value here padding is 12 and 24 but radius is 25px
+     greater than both value although is working // always go with graeter than height value */
+     transition: all 0.3s linear;
+}
+
+/* these setting apply on both hover and active property */
+.navbar-list .navbar-link:hover,
+.navbar-list .navbar-link:active{
+    color: var(--helper-color);
+}
+
+.navbar-btn:hover,
+.navbar-btn:active{
+    background-color: var(--helper-color);
+    color: white;
+}
+
+.navbar-link{
+    text-transform: uppercase;  /* all will be capital letter*/
+}
+
+.mobile-nav-icon{
+    font-size: 40px;
+    color: var(--primary-color);
+}
+
+.mobile-navbar-btn{
+    display: none;  /* to remove button menu and close icone */
+}
+
+/* show only menu icone when click in menu then show close icon */
+.mobile-nav-icon[name="close"]{
+    display: none;
+}
+
+/* reusable code */
+.container{
+    padding: 96px 0;
+}
+
+.container{
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 32px;
+
+}
+
+.grid{
+    display: grid;
+    gap: 96px;
+}
+
+/* this is temeporary */
+.grid-two-column{
+    grid-template-columns: repeat(2,1fr);  /* means two column create */
+}
+
+.btn{
+    font-size: 16px;
+    text-transform: capitalize; /* to bigger than actual size*/
+    padding: 16px 32px;
+    border-radius: 50px;
+    background-color: var(--helper-color);
+    color: white;
+    transition:  all .2dec linear;
+}
+
+.btn:hover, .btn:active{
+    transform: scale(1.05);
+}
+
+/*-----------------------
+ hero section style start 
+ ----------------------------- */
+.section-hero{
+    position: relative;
+}
+
+/* this section is use to some para in above the inage in bottom left side*/
+.section-hero::before{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    bottom: 96px;
+    right: 0;
+    width: 30%;
+    height: 50%;
+    background-color:var(--bg-color);
+    z-index:-1; /* to send back side */
+}
+
+.primary-heading{
+    font-size: 60px;
+    font-weight: 700;
+}
+
+.section-hero .para{
+    margin-top: 20px;
+    margin-bottom: 32px;
+}
+
+.hero-icons {
+    margin-top: 42px;
+}
+
+.icon{
+    font-size: 60px;
+}
+
+/* dots in below the get started btn */
+.hero-icons .icon::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 60%;
+    background-color: var(--helper-color);
+    border-radius: 50%;
+}
+
+.hero-icons h2{
+    font-size: 20px;
+    margin-top: 15px;
+    margin-bottom: 8px;
+}
+
+.section-hero .hero-icon-style .para{
+     line-height: 1.6;
+     font-family:14px ;
+    margin: 0;
+}
+
+.hero-image{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;  /* image is staring with top side */
+    position: relative;
+}
+
+.hero-image image{
+    height: 90%;
+    box-shadow: 0 0 100px 0 rgba(0,0,0,0.1);
+}
+
+/* data in below the image */  
+.hero-img-overlay{
+    position: absolute;
+    bottom: 0;
+    left: -10%;
+    background-color: var(--primary-color);
+    padding: 40px;
+}
+
+.hero-img-overlay .para{
+    color: white;
+}
+
+.hero-img-overlay .para:nth-child(2){
+    margin: 0;
+    font-weight: bold;
+}
+
+.hero-img-overlay .para:last-child{
+    margin: 0;
+}
+
+/*-----------------------
+media query means responsivemaking style start 
+ ----------------------------- */
+
+ @media(max-width:1250px){
+    .container{
+        padding: 0 60px;
+    }
+
+    /* by default 1 rem = 16px but we can manage to 1rem =9px by clculator*/
+    html{
+        font-size: 56.25%;
+    }
+ }
+ @media(max-width:980px){
+    .container{
+        max-width: 960px;
+    }
+    .section-hero .grid-two-column{
+        grid-template-columns: 1fr;
+    }
+
+    .section-hero .hero-icons .grid-two-column{
+        grid-template-columns: 1fr 1fr;
+    }
+    .navbar{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #000;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        /* takes the right side in x axis*/
+        transform: translateX(100%);
+        transition: all 0.3s linear;
+
+        /* to hidden the navbar opacity 0 visibilty set hidden */
+        opacity: 1;
+        visibility:visible;  
+        pointer-events: none;
+    }
+
+    /* all items in nav bar verticaly set flex-direction clumn */
+    .navbar .navbar-list{
+        display: flex;
+        flex-direction: column;   
+        justify-content: center;
+        align-items: center;
+    }
+    .navbar .navbar-link{
+        color: white;
+    }
+
+    /* to display menu bar or close bar */
+    .mobile-navbar-btn{
+        display: block; 
+        z-index: 9999;
+    }
+ 
+    /* when class is active then menu  will show */
+    .active .navbar{
+        opacity: 1;
+        visibility:visible;  
+        pointer-events: none;
+        transform: translateX(0);
+        z-index: 999;   /* give max value */
+    }
+
+    /* to show when menu bar is active then show only close icon */
+    .active .mobile-navbar-btn .mobile-nav-icon[name="close"]{
+        display: block;
+        color: white;
+        z-index: 9999999;
+    }
+
+    /* to show when menu bar is not active then show only menu icon */
+    .active .mobile-navbar-btn .mobile-nav-icon[name="menu"]{
+        display: none;
+        color: white;
+    }
+
+    .section::before{
+        height: 30%;
+    }
+    .hero-image image{
+        width: 60%;
+    }
+
+    .hero-image .hero-img-overlay {
+        width: 90%;
+        left: 0;
+    }
+ }
+ @media(max-width:768px){
+     .container{
+        max-width: 720px;
+     }
+     .hero-image image{
+        width:80%;
+     }
+     .hero-image .hero-img-overlay{
+        width: 90%;
+        left: 0;
+     }
+ }
+
+ @media(max-width:560px){
+
+    .container{
+        max-width: 530px;
+    }
+    .hero-image .hero-img-overlay {
+        width: 100%;
+        height: 60%;
+        left: 0;
+    }
+    html{
+        font-size: 40%;
+    }
+   .hero-image .hero-img-overlay
+    {
+        font-size: 12px;
+        line-height: 1.2;
+        padding:  5px 5px;
+    }
+    .hero-image .hero-img-overlay p{
+        padding: 2px;
+    }
+ }
+ @media(max-width:360px){
+    .hero-image .hero-img-overlay p {
+        margin: 0 10px;
+    }
+    .hero-image .hero-img-overlay {
+        width: 100%;
+        height: 60%;
+        left: 0;
+        font-size: 7px;
+        line-height: .8;
+        padding: 3px 3px;
+        height: 100px;
+    }
+    .hero-image .hero-img-overlay .para{
+        margin: 3px 3px;
+    }
+    .hero-icons{
+        margin-bottom: 10px;
+    }
+    .section-hero .hero-icons{
+        padding-bottom: 10px;
+    }
+    .container {
+        padding: 0 20px;
+        max-width: 340px;
+    }
+    .hero-image{
+        padding-top: 10px;
+    }
+
+    .primary-heading {
+        font-size: 40px;
+        font-weight: 500;
+    }
+.grid-two-column {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+}
+
+}
+ @media (max-width: 560px){
+    .hero-image .hero-img-overlay p {
+        padding: 2px;
+    }
+    .hero-img-overlay .para {
+        color: white;
+    }
+    .section-hero .para {
+        margin-top: 20px;
+        margin-bottom: 32px;
+    }
+    .para {
+        font-size: 12px;
+        line-height: 1.2;
+        font-weight: 400;
+        color: --var(--para-color);
+    }
+    }
+
+
